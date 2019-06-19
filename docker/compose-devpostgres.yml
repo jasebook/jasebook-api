@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  db:
+    image: "postgres"
+    container_name: "dev_postgres"
+    ports:
+      - "54320:5432"
+    volumes:
+      - my_dbdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=jasebook
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_DB=jasebook
+volumes:
+  my_dbdata:
