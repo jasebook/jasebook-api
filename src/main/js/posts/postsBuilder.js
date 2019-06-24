@@ -1,5 +1,6 @@
 import React from 'react';
-import Posts from './posts'
+import Posts from './posts';
+import PostAdder from './postAdder';
 const client = require('../client');
 
 class PostsBuilder extends React.Component {
@@ -16,7 +17,11 @@ class PostsBuilder extends React.Component {
 
 	render() {
 		return (
-      <Posts posts={this.state.posts}/>
+		    <div>
+                <Posts posts={this.state.posts}/>
+                <PostAdder/>
+		    </div>
+
 		)
 	}
 }
