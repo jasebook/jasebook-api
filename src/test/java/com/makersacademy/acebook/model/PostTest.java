@@ -38,16 +38,16 @@ public class PostTest {
 		Post alex = new Post("alex", LocalDateTime.now());
 
 		// when
-		Post found = postRepository.save(alex);
+		postRepository.save(alex);
 
 		// then
-		Post tan = new Post("tan", LocalDateTime.now());
-		postRepository.save(tan);
-
-		long i = 1;
+		long i = alex.getId();
 		Optional<Post> byId = postRepository.findById(i);
-
-		assertThat(byId.get(), equalTo(alex));
+		if (byId.isPresent()) {
+            assertThat(byId.get(), equalTo(alex));
+        }
 	}
+
+
 
 }
