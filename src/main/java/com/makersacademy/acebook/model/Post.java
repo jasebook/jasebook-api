@@ -1,14 +1,14 @@
 package com.makersacademy.acebook.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.jpa.repository.Temporal;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -19,13 +19,15 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String content;
-    private LocalDateTime postedTime;
+
+    @Column(name = "postedTime", updatable=false)
+    @CreationTimestamp
+    private Timestamp postedTime;
 
     private Post() {}
 
-    public Post(String content, LocalDateTime postedTime) {
+    public Post(String content) {
         this.content = content;
-        this.postedTime = postedTime;
     }
 
 }

@@ -28,26 +28,23 @@ public class PostTest {
 
 	@Test
 	public void postHasContent() {
-		LocalDateTime now = LocalDateTime.now();
-		Post post = new Post("hello", now);
+		Post post = new Post("hello");
 		assertThat(post.getContent(), containsString("hello"));
 	}
 
 	@Test
 	public void test() {
-		Post alex = new Post("alex", LocalDateTime.now());
+		Post alex = new Post("alex");
 
 		// when
-		Post found = postRepository.save(alex);
+		postRepository.save(alex);
 
 		// then
-		Post tan = new Post("tan", LocalDateTime.now());
-		postRepository.save(tan);
-
-		long i = 1;
+		long i = alex.getId();
 		Optional<Post> byId = postRepository.findById(i);
-
-		assertThat(byId.get(), equalTo(alex));
+		if (byId.isPresent()) {
+            assertThat(byId.get(), equalTo(alex));
+        }
 	}
 
 }
