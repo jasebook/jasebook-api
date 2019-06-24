@@ -5,12 +5,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class PostTest {
+import java.time.LocalDateTime;
 
-	private Post post = new Post("hello");
+public class PostTest {
 
 	@Test
 	public void postHasContent() {
+		LocalDateTime now = LocalDateTime.now();
+		Post post = new Post("hello", now);
 		assertThat(post.getContent(), containsString("hello"));
 	}
 
