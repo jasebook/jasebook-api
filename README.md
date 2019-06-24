@@ -1,5 +1,14 @@
 ## Acebook
 
+### Instructions
+In order to run our database you need to cd into Docker and run: ```docker-compose up -d``` command 
+to pull the docker image running postgresql engine. This has to be done everytime you reboot your machine.
+
+In TablePlus, connect to your postgres databse engine running on port 54320 as defined in docker-compose.yml file
+and create the database - this will only need to be done once with the following command:
+```CREATE DATABASE "jasebook-dev";```
+
+
 This is a java/springboot and react project to be developed on.
 
 It uses:
