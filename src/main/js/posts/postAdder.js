@@ -15,8 +15,6 @@ class PostAdder extends Component {
         axios.post("/api/posts", {
             content: this.state.inputValue
         });
-        // client({method: 'POST', path: '/api/posts', body: event.target.name});
-        console.log(event)
     }
 
     updateInputValue(event) {
@@ -29,7 +27,7 @@ class PostAdder extends Component {
         return (
             <div>
                 <form id='add_post' onSubmit={this.handleSubmit}>
-                    <input type="text" name="new_post" value={this.state.inputValue} onChange={(event) => this.updateInputValue(event) }/>
+                    <input type="text" value={this.state.inputValue} onChange={(event) => this.updateInputValue(event) }/>
                     <input type="submit" value="Post me"/>
                 </form>
             </div>
