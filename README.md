@@ -1,6 +1,8 @@
 ## Acebook
 
 ### Instructions
+Install docker app and open it.
+
 In order to run our database you need to cd into Docker and run: ```docker-compose up -d``` command 
 to pull the docker image running postgresql engine. This has to be done everytime you reboot your machine.
 
