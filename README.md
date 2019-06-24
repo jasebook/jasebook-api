@@ -1,5 +1,9 @@
 ## Acebook
 
+### Instructions
+In order to run our database you need to cd into Docker and run: ```docker-compose up -d``` command 
+to pull the docker image running postgresql engine. This has to be done everytime you reboot your machine.
+
 This is a java/springboot and react project to be developed on.
 
 It uses:
