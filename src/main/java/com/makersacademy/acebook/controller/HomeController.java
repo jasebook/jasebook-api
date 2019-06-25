@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
+
 @Controller
 public class HomeController {
 
@@ -21,13 +22,6 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping("/api/posts/desc", produces="application/json")
-	@ResponseBody
-	public String posts() {
-		List<Post> allOrderByPostedTimeDesc = postRepository.findAllOrderByPostedTimeDesc();
-		System.out.println(allOrderByPostedTimeDesc);
-		return allOrderByPostedTimeDesc;
-	}
-
 
 }
+
