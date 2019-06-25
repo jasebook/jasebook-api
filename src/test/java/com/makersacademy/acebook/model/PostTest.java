@@ -28,14 +28,13 @@ public class PostTest {
 
 	@Test
 	public void postHasContent() {
-		LocalDateTime now = LocalDateTime.now();
-		Post post = new Post("hello", now);
+		Post post = new Post("hello");
 		assertThat(post.getContent(), containsString("hello"));
 	}
 
 	@Test
 	public void test() {
-		Post alex = new Post("alex", LocalDateTime.now());
+		Post alex = new Post("alex");
 
 		// when
 		postRepository.save(alex);
@@ -47,7 +46,5 @@ public class PostTest {
             assertThat(byId.get(), equalTo(alex));
         }
 	}
-
-
 
 }
