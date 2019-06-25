@@ -8,14 +8,18 @@ class PostAdder extends Component {
             inputValue: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.postUpdater = props.postUpdater;
     }
 
     handleSubmit(event) {
         event.preventDefault();
         axios.post("/api/posts", {
             content: this.state.inputValue
+        }).then(() => {
+            this.postUpdater()
         });
     }
+
 
     updateInputValue(event) {
         this.setState({
