@@ -16,10 +16,10 @@ public class RestAPIController {
 	@Autowired
 	private PostRepository postRepository;
 	@RequestMapping(
-			value = "findall",
+			value = "/api/posts/desc",
 			method = RequestMethod.GET,
 			produces = { MimeTypeUtils.APPLICATION_JSON_VALUE },
-			headers = "Accept=application/json"
+			headers = "Accept=application/hal+json"
 	)
 	public ResponseEntity<Iterable<Post>> getPostsSort() {
 		try {
@@ -29,10 +29,4 @@ public class RestAPIController {
 		}
 
 	}
-//	@RequestMapping(value = "/api/posts", method = GET)
-//	public Post getPosts() {
-//		List<Post> allOrderByPostedTimeDesc = postRepository.findAllOrderByPostedTimeDesc();
-//		return new ResponseEntity<Iterable<Post>>;
-//	}
-
 }
