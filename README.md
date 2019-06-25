@@ -70,3 +70,11 @@ Flyway is being used to manage your database migrations. Use the flyway docs to 
 ### CI
 
 - to be configured
+
+
+
+
+### 
+
+Mark resources directory as test sources root to make intellij know they are being used.
+
