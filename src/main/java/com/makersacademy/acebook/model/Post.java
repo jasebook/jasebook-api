@@ -1,14 +1,9 @@
 package com.makersacademy.acebook.model;
 
-import javax.persistence.*;
-
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.jpa.repository.Temporal;
-
+import javax.persistence.*;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 @Data
 @Entity
