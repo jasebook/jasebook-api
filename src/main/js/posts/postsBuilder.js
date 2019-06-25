@@ -8,9 +8,14 @@ class PostsBuilder extends React.Component {
     constructor(props) {
         super(props);
         this.state = {posts: []};
+        this.updatePosts = this.updatePosts.bind(this);
     }
 
     componentDidMount() {
+        this.updatePosts();
+    }
+
+    updatePosts() {
         axios.get('/api/posts').then(response => {
             console.log(response);
             this.setState({posts: response.data._embedded.posts});
@@ -20,8 +25,8 @@ class PostsBuilder extends React.Component {
     render() {
         return (
             <div>
+                <PostAdder postUpdater={this.updatePosts}/>
                 <Posts posts={this.state.posts}/>
-                <PostAdder/>
             </div>
 
         )
