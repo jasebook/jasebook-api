@@ -16,8 +16,7 @@ class PostsBuilder extends React.Component {
     }
 
     updatePosts() {
-        axios.get('/api/posts').then(response => {
-            console.log(response);
+        axios.get('/api/posts/search/findAllOrderByPostedTimeDesc').then(response => {
             this.setState({posts: response.data._embedded.posts});
         });
     }
