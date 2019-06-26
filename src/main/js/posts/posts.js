@@ -13,7 +13,7 @@ class Posts extends React.Component {
         <h1 className='posts-title'>
           Posts
         </h1>
-  			<div cy-data="postsContainer" className='posts-items'>
+  			<div className='posts-items'>
   				{this.getPosts()}
   			</div>
       </article>

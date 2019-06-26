@@ -31,8 +31,8 @@ class PostAdder extends Component {
         return (
             <div>
                 <form id='add_post' onSubmit={this.handleSubmit}>
-                    <input type="text" data-cy="addPostTxtBox" value={this.state.inputValue} onChange={(event) => this.updateInputValue(event) }/>
-                    <input type="submit" data-cy="submitPost" value="Post me"/>
+                    <input type="text" value={this.state.inputValue} onChange={(event) => this.updateInputValue(event) }/>
+                    <input type="submit" value="Post me"/>
                 </form>
             </div>
         )}
