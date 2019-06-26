@@ -104,7 +104,7 @@ webpack does not deposit the bundle in the target directory where the running sp
 
 Mark resources directory as test sources root to make intellij know they are being used.
 
-###Other Learnings
+#### Other Learnings
 
 - `npm update` - when run inside your project, it updates the versions of the packages in package.json file.
 You should run `npm install ` after that.
