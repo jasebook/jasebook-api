@@ -94,6 +94,8 @@ Cypress is a react native app that can visit your website, click links, buttons,
 It come with nice documentation and scripting language for writing feature tests that can be tracked in a browser.
 When you first run it, it runs example tests that can be deleted and leaves the folder structure.
 
+`cy-data` is a property that can be set on html tag and then referred to by feature tests. 
+
 
 ### Gochas
 
@@ -102,7 +104,7 @@ webpack does not deposit the bundle in the target directory where the running sp
 
 Mark resources directory as test sources root to make intellij know they are being used.
 
-####Other Learnings
+###Other Learnings
 
 - `npm update` - when run inside your project, it updates the versions of the packages in package.json file.
 You should run `npm install ` after that.
@@ -116,3 +118,8 @@ You should run `npm install ` after that.
   - <=>binding - binding a value of an element to a value of the state of the component the element is in; if one changes the other one will change as well
   - axios in react is like ajax in js
   - remember to prevent default behaviour on a single page app
+- Spring:
+  - There is a lot of magic in the air
+  - Our timestamp is created by the server and not the database
+  - @Query annotation executes SQL queries and the method's name, below the annotation, can be formatted as a query
+  - the default api endpoints are added by the `spring.data.rest.base-path=/api` in application.properties
