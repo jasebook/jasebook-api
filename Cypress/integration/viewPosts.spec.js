@@ -25,12 +25,5 @@ describe('Mainpage', () => {
         cy.visit('http://localhost:8080/')
         cy.wait("@posts")
         cy.contains('hola chicas')
-
     });
-
-    it('allows you to post a post and it is displayed', function () {
-        cy.visit('http://localhost:8080/')
-        cy.
-    })
-
 });
