@@ -67,9 +67,21 @@ Flyway is being used to manage your database migrations. Use the flyway docs to 
 - Before deploying your application, you'll need to add some config to `application-prod.properties` so that the deployed application uses the production database.
 - Then, make sure the deployed app will use `application-prod.properties` by using `spring.profiles.active=dev` in your deployment script.
 
-### CI
+### CI/CD
 
-- to be configured
+Travis is our CI tool - it mainly builds the app and runs its default `mvn test -B command`.
+
+It is connected with github and set up in a way that every pull request triggers it to run build and tests.
+At the moment travis.yml is only set up to run unit tests for java code but we are working on the set up for running feature tests in js.
+We tried implementing the test coverage functionality by using JaCoCo that generates reports for Java code. They can be found in the temporary
+directory `target` that is being created by the maven build.
+Coveralls is an online tool for displaying the coverage reports which we contected to our github organization, but the integration of Coveralls and Travis has been challenging.
+
+Most of this set up has to be done by managing dependencies and plugins via pom.xml file. 
+
+Travis is also a middle men for deploying production version of the application to Heroku that hosts it on the cloud.
+[Our App in Prod](https://jasebook.herokuapp.com/)
+Heroku just created a PostgresQL database for our application by detecting reference to it in our code out of the box which was a nice surprise.
 
 ### Testing
 Maven runs most of our tests.
@@ -78,6 +90,9 @@ To run the feature and integration tests, you must start Cypress:
 
 ```npm run cypress:open ```
 
+Cypress is a react native app that can visit your website, click links, buttons, fill in text boxes etc.
+It come with nice documentation and scripting language for writing feature tests that can be tracked in a browser.
+When you first run it, it runs example tests that can be deleted and leaves the folder structure.
 
 
 ### Gochas
@@ -87,3 +102,17 @@ webpack does not deposit the bundle in the target directory where the running sp
 
 Mark resources directory as test sources root to make intellij know they are being used.
 
+####Other Learnings
+
+- `npm update` - when run inside your project, it updates the versions of the packages in package.json file.
+You should run `npm install ` after that.
+- @Data annotation is a part of lombok plugin and provides invisible getters and setters
+- to manage spring active profiles we added application.properties file in the `test` directory
+- React:
+  -  you need a wrapping `<div>` around your components
+  - `super` in a constructor is referring to a class that is being extended
+  - `state`: data within a component; it is set up in a constructor, any change in state causes the component to be rerendered
+  - function callback, `function() {}` behaves differently to `() => {}`
+  - <=>binding - binding a value of an element to a value of the state of the component the element is in; if one changes the other one will change as well
+  - axios in react is like ajax in js
+  - remember to prevent default behaviour on a single page app
