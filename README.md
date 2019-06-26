@@ -71,10 +71,19 @@ Flyway is being used to manage your database migrations. Use the flyway docs to 
 
 - to be configured
 
+### Testing
+Maven runs most of our tests.
+
+To run the feature and integration tests, you must start Cypress:
+
+```npm run cypress:open ```
 
 
 
-### 
+### Gochas
+
+webpack does not deposit the bundle in the target directory where the running spring instance reads it's static resources. You must copy it over yourself from 'src' to 'target' if you wish for react changes to be seen without a reboot of spring
+
 
 Mark resources directory as test sources root to make intellij know they are being used.
 
