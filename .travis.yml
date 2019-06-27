@@ -5,11 +5,11 @@ jdk:
 env:
   - NODE_VERSION="9.9.0"
 
-before_install:
-  - nvm install $NODE_VERSION
-
-install:
-  - npm ci
+cache:
+  directories:
+    - $HOME/.npm
+    - .autoconf
+    - $HOME/.m2
 
 after_success:
   - mvn jacoco:report coveralls:report
