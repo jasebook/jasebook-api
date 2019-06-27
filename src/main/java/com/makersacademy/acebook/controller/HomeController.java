@@ -1,8 +1,8 @@
 package com.makersacademy.acebook.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 @Controller
 public class HomeController {
