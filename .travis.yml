@@ -2,5 +2,17 @@ language: java
 
 jdk:
   - openjdk11
+env:
+  - NODE_VERSION="9.9.0"
+
+cache:
+  directories:
+    - $HOME/.npm
+    - .autoconf
+    - $HOME/.m2
+
 after_success:
   - mvn jacoco:report coveralls:report
+  - $(npm bin)/cypress run --record --spec cypress/integration/*.spec.*
+
+
