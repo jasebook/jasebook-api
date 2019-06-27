@@ -22,22 +22,20 @@ public class PostTest {
 	@Autowired
 	private UserRepository userRepository;
 
-//	@Test
-//	public void postHasContent() {
-//		Post post = new Post("hello", (long) 1);
-//		assertThat(post.getContent(), containsString("hello"));
-//	}
+	@Test
+	public void postHasContent() {
+		Post post = new Post("hello", (long) 1);
+		assertThat(post.getContent(), containsString("hello"));
+	}
 
 	@Test
-	public void test() {
+	public void databaseFunctionalityTest() {
 		Post alex = new Post("alex", (long) 1);
-		User user = new User((long) 1, "annatan");
+		User user = new User("antgeoff");
 
-		// when
 		userRepository.save(user);
 		postRepository.save(alex);
 
-		// then
 		long i = alex.getId();
 		Optional<Post> byId = postRepository.findById(i);
 		if (byId.isPresent()) {
