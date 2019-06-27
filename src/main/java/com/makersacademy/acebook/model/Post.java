@@ -22,6 +22,10 @@ public class Post {
 
     private Post() {}
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public Post(String content, Long user_id) {
         this.content = content;
         this.user_id = user_id;
