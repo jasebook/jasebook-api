@@ -1,1 +1,1 @@
-ALTER TABLE posts ADD user_id bigserial;
+ALTER TABLE posts ADD user_id bigint;
