@@ -128,14 +128,15 @@ You should run `npm install ` after that.
   - Do not use `bigserial` as a datatype for a foreign key column as it auto-generates and auto-increments numbers!
   
  
- ###Progress in Team :) 
+ ### Progress in Team :) 
  
 Disconnected in Week 1  **-------->** Better teamwork in Week 2
      
      - Sitting apart  ---->  Sitting together
      - Not planning our time properly  ---->  Planning meeting and regular stand-ups using Trello
      - Individual work  ---->  Pairing twice a day and sharing knowledge
-     - Not sharing thoughts and feelings with other members of the team  ---->  Better/More comfortable communication
+     - Not sharing thoughts and feelings with other members of the team  ---->  Better/More 
+     comfortable communication
  
  These elements created an uncomfortable atmosphere/awkwardness in the team in week 1 when we met. Tension was likely getting in the way of progress.
  
@@ -145,7 +146,7 @@ Disconnected in Week 1  **-------->** Better teamwork in Week 2
  
  
 
- ###The Not Great Bits :( 
+ ### The Not Great Bits :( 
  
     - Spring magic
     - Using the seed project
@@ -154,7 +155,7 @@ Disconnected in Week 1  **-------->** Better teamwork in Week 2
     - Pairing was difficult
  
  
- ####Things we learnt: 
+ #### Things we learnt: 
  
     - You can't just assume team members will just know that you need more support.
         - Team members won't know you don't understand if you don't make it clear.
