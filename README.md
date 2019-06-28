@@ -144,7 +144,8 @@ Disconnected in Week 1  **-------->** Better teamwork in Week 2
  `REACT` instead of `Java, HTML and Thymeleaf` on the front end for example.
  We reflected on the week and gave each other the chance to voice concerns and offer up small ways to make things easier.
  
- 
+  ![Board](/65675779_497652997638323_5096544386846556160_n.jpg)
+Format: ![Alt Text](https://github.com/jasebook/jasebook-api/blob/master/64916106_2346387452291206_1749866497838153728_n%20(1).jpg)
 
  ### :( 
  
@@ -167,5 +168,3 @@ Disconnected in Week 1  **-------->** Better teamwork in Week 2
         - Avoid using Spring (for next time).
     - Check in and time-box more often. Also have a mid-week planning meeting to keep us on track.
     
-    
- 
