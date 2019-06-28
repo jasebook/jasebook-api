@@ -146,7 +146,7 @@ Disconnected in Week 1  **-------->** Better teamwork in Week 2
  
  
 
- ### The Not Great Bits :( 
+ ### :( 
  
     - Spring magic
     - Using the seed project
