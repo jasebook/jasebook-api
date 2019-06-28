@@ -13,9 +13,9 @@ cache:
 
 after_success:
   - mvn jacoco:report coveralls:report
-  - $(npm bin)/cypress run --record --spec /home/travis/build/jasebook/jasebook-api/cypress/integration/*.spec.*
+  - $(npm bin)/cypress run --record --spec /home/travis/build/jasebook/jasebook-api/Cypress/integration/*.spec.*
   - ls
   - pwd
-  - ls /home/travis/build/jasebook/jasebook-api/cypress/integration
+  - ls /home/travis/build/jasebook/jasebook-api/Cypress/integration
 
 
