@@ -17,7 +17,7 @@ public class User {
     public User( String username) {
         this.username = username;
     }
-    @OneToMany(mappedBy = "posts")
+    @OneToMany(mappedBy="users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Post> posts;
 
     private User() {}

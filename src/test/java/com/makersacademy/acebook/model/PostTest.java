@@ -2,6 +2,7 @@ package com.makersacademy.acebook.model;
 
 import com.makersacademy.acebook.repository.PostRepository;
 import com.makersacademy.acebook.repository.UserRepository;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,14 @@ public class PostTest {
 	@Autowired
 	private UserRepository userRepository;
 
+	User user;
+
+	@Before
+	public void setUp() {
+		user = new User("antgeoff");
+		userRepository.save(user);
+	}
+
 	@Test
 	public void postHasContent() {
 		Post post = new Post("hello", (long) 1);
@@ -29,17 +38,17 @@ public class PostTest {
 	}
 
 	@Test
-	public void databaseFunctionalityTest() {
-		Post alex = new Post("alex", (long) 1);
-		User user = new User("antgeoff");
+	public void databaseFunctionalityTest() throws InterruptedException {
+		long i = user.getUser_id();
+		Optional<User> byId = userRepository.findById(i);
 
-		userRepository.save(user);
+		Post alex = new Post("alex", byId.get().getUser_id());
 		postRepository.save(alex);
 
-		long i = alex.getId();
-		Optional<Post> byId = postRepository.findById(i);
-		if (byId.isPresent()) {
-            assertThat(byId.get(), equalTo(alex));
+		long i2 = alex.getId();
+		Optional<Post> byId2 = postRepository.findById(i);
+		if (byId2.isPresent()) {
+            assertThat(byId2.get(), equalTo(alex));
         }
 	}
 }

@@ -16,15 +16,17 @@ public class Post {
     private String content;
     private Long user_id;
 
+    @ManyToOne(optional=false)
+    @JoinColumn(name="user_id", insertable=false, updatable=false)
+    private User users;
+
     @Column(name = "postedTime", updatable=false)
     @CreationTimestamp
     private Timestamp postedTime;
 
     private Post() {}
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+
 
     public Post(String content, Long user_id) {
         this.content = content;
