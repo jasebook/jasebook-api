@@ -14,5 +14,6 @@ cache:
 after_success:
   - mvn jacoco:report coveralls:report
   - $(npm bin)/cypress run --record --spec cypress/integration/*.spec.*
+  - ls cypress/integration
 
 
